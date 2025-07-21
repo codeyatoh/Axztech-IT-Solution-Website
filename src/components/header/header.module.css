@@ -1,8 +1,9 @@
 .header {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     width: 100%;
   }
@@ -130,7 +131,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 2rem;
     z-index: 1001;
   }
   
@@ -273,75 +274,93 @@
     .menuToggle {
       display: block;
     }
-    
+
     .container {
       height: 70px;
       padding: 0 1rem;
     }
-    
+
     .nav {
       position: fixed;
       top: 70px;
       left: 0;
-      width: 100%;
-      height: calc(100vh - 70px);
+      right: 0;
+      width: 100%; /* changed from 100vw */
       background-color: #ffffff;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 0;
-      padding: 2rem 0;
+      padding: 0;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      z-index: 2000;
+      box-sizing: border-box;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
-    
+
     .navOpen {
       transform: translateX(0);
     }
-    
+
     .navList {
       flex-direction: column;
       gap: 0;
-      width: 100%;
+      width: 100%; /* changed from 100vw */
       text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
+
     .navItem {
-      width: 100%;
+      width: 100%; /* changed from 100vw */
       border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
     }
-    
+
     .navItem:last-child {
       border-bottom: none;
     }
-    
+
     .navLink {
       display: block;
-      padding: 1.5rem 2rem;
+      padding: 1.5rem 0;
       font-size: 1.2rem;
-      width: 100%;
+      width: 100%; /* changed from 100vw */
       background-color: transparent;
+      text-align: center;
+      box-sizing: border-box;
     }
-    
+
     .navLink:hover {
       background-color: #f1f5f9;
     }
-    
+
     .navLink::after {
       display: none;
     }
-    
+
     .ctaButton {
-      margin-top: 2rem;
-      padding: 1.25rem 3rem;
-      font-size: 1.1rem;
+      margin: 2rem auto 2rem auto;
+      display: block;
+      padding: 0.9rem 1.5rem;
+      font-size: 1rem;
+      width: auto;
+      max-width: 220px;
+      text-align: center;
     }
-    
+
     .logoText {
       font-size: 1.1rem;
     }
-    
+
     .logo {
       height: 35px;
     }
@@ -404,7 +423,7 @@
     }
     
     .ctaButton {
-      padding: 1.5rem 3rem;
+      padding: 1.5rem 4rem;
       font-size: 1.2rem;
     }
   }
