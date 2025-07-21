@@ -162,21 +162,27 @@
 
 @media (max-width: 480px) {
   .footer {
-    padding: 2rem 0.5rem 1rem 0.5rem;
+    padding: 1.2rem 0.2rem 0.7rem 0.2rem;
   }
   .logo {
-    height: 36px;
+    height: 28px;
   }
   .companyName {
-    font-size: 1.05rem;
-  }
-  .sectionTitle {
-    font-size: 1rem;
-  }
-  .linksList a, .contactList li {
     font-size: 0.95rem;
   }
+  .sectionTitle {
+    font-size: 0.95rem;
+  }
+  .linksList a, .contactList li {
+    font-size: 0.9rem;
+  }
   .socialLinks a {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+  }
+  .footerSection {
+    margin-bottom: 0.5rem;
+  }
+  .footerContent {
+    gap: 1.2rem;
   }
 }

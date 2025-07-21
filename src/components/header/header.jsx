@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './header.module.css';
 import logo from '../../assets/images/axztech-logo.png';
 
@@ -7,6 +8,11 @@ function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close menu when a link is clicked (for mobile)
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -22,16 +28,16 @@ function Header() {
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#home" className={`${styles.navLink} ${styles.active}`}>Home</a>
+              <NavLink to="/" end className={({ isActive }) => `${styles.navLink}${isActive ? ' ' + styles.active : ''}`} onClick={handleNavClick}>Home</NavLink>
             </li>
             <li className={styles.navItem}>
-              <a href="#about" className={styles.navLink}>About Us</a>
+              <a href="#about" className={styles.navLink} onClick={handleNavClick}>About Us</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#products" className={styles.navLink}>Products</a>
+              <a href="#products" className={styles.navLink} onClick={handleNavClick}>Products</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#contact" className={styles.navLink}>Contact Us</a>
+              <NavLink to="/contact" className={({ isActive }) => `${styles.navLink}${isActive ? ' ' + styles.active : ''}`} onClick={handleNavClick}>Contact Us</NavLink>
             </li>
           </ul>
           <button className={styles.ctaButton}>Get Started</button>
